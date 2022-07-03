@@ -33,14 +33,12 @@ class Body extends StatelessWidget {
             ),
             RoundedButton(
               text: "LOGIN",
-              press: () => {
-                WidgetsBinding.instance.addPostFrameCallback((_) {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const LoginScreen(),
-                      ));
-                })
+              press: () {
+                Future.delayed(Duration.zero, () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const LoginScreen();
+                  }));
+                });
               },
             ),
             RoundedButton(
