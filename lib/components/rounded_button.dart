@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -22,20 +20,16 @@ class RoundedButton extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Container(
+      width: size.width * 0.8,
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(29),
         child: TextButton(
-          onPressed: press(),
-          child: Container(
-              width: size.width * 0.8,
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-              color: color,
-              child: Text(
-                text,
-                style: TextStyle(color: textColor),
-              )),
-        ),
+            onPressed: press(),
+            child: Text(
+              text,
+              style: TextStyle(color: textColor),
+            )),
       ),
     );
   }

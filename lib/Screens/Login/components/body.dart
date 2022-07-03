@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Login/components/background.dart';
 import 'package:flutter_auth/components/rounded_button.dart';
-import 'package:flutter_auth/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../components/already_have_anaccount_chech.dart';
 import '../../../components/rounded_input_field.dart';
 import '../../../components/rounded_password_field.dart';
+import '../../SignUp/signup_screen.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -42,7 +42,13 @@ class Body extends StatelessWidget {
               height: size.height * 0.03,
             ),
             AlreadyHaveAnAccountCheck(
-              press: () {},
+              press: () {
+                Future.delayed(Duration.zero, () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const SignUpScreen();
+                  }));
+                });
+              },
             )
           ]),
     );
